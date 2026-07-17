@@ -467,3 +467,29 @@ h1, h2, h3, .display-font {
     color: #fff;
     text-decoration: underline;
 }
+
+
+/* ===========================
+   Dark Theme
+=========================== */
+
+body.dark-mode{
+    --paper:#181818;
+    --surface:#252525;
+    --ink:#F5F5F5;
+    --muted:#C7C7C7;
+    --border:#3D3D3D;
+    --moss:#76c893;
+    --moss-dark:#5aa87b;
+}
+
+body{
+    transition:.3s;
+}
+
+.site-header,
+.recipe-card,
+.modal-content,
+.search-input{
+    transition:.3s;
+}

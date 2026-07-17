@@ -28,6 +28,7 @@ const favToggleBtn = document.getElementById('favToggleBtn');
 const favCountLabel = document.getElementById('favCountLabel');
 const recipeModalBody = document.getElementById('recipeModalBody');
 const recipeModalLabel = document.getElementById('recipeModalLabel');
+const themeToggleBtn = document.getElementById("themeToggleBtn");
 
 let activeCategory = null;   // currently selected category chip (or null)
 let showingFavorites = false;
@@ -39,8 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     updateFavCount();
 
+    const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme==="dark"){
+    document.body.classList.add("dark-mode");
+    themeToggleBtn.textContent="☀️";
+}
+
     searchForm.addEventListener('submit', handleSearchSubmit);
     favToggleBtn.addEventListener('click', toggleFavoritesView);
+    themeToggleBtn.addEventListener("click",toggleTheme);
 });
 
 /* =========================================================
@@ -384,4 +393,22 @@ function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+}
+
+function toggleTheme(){
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+
+        localStorage.setItem("theme","dark");
+        themeToggleBtn.textContent="☀️";
+
+    }else{
+
+        localStorage.setItem("theme","light");
+        themeToggleBtn.textContent="🌙";
+
+    }
+
 }
