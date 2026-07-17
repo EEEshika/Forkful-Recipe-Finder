@@ -3,6 +3,7 @@
 A responsive recipe search app built with **Bootstrap 5** and **vanilla JavaScript**, using a live public REST API. Built as a frontend-developer portfolio project.
 
 **Live demo:** https://eeeshika.github.io/Forkful-Recipe-Finder/
+
 **Design source:** built directly to a custom design plan (see `style.css` header comment for the token system)
 
 ## Features
